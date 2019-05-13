@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+   console:
+     image: ollijanatuinen/ssh2host
+     secrets:
+       - source: host-ssh-key
+         target: /root/.ssh/id_rsa
+         mode: 0400
+     networks:
+       - bridge
+     volumes:
+       - type: bind
+         source: /var/run/docker.sock
+         target: /var/run/docker.sock
+     environment:
+       - USERNAME=root
+     deploy:
+         placement:
+             constraints: [node.role == manager]
+
+secrets:
+   host-ssh-key:
+     external: true
+
+networks:
+   bridge:
+     external: true
