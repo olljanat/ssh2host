@@ -15,6 +15,7 @@ services:
          target: /var/run/docker.sock
      environment:
        - USERNAME=root
+       - EXTRA_SWITCH
      deploy:
          placement:
              constraints:

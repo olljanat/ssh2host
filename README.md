@@ -25,6 +25,8 @@ docker exec -it <containerid> bash
 ```
 or use some web base container management tool.
 
+For debug purposes you can also specify extra switches to **ssh** command by specifying them to environment variable EXTRA_SWITCH on stack file.
+
 # Build
 ```bash
 docker build . -t ollijanatuinen/ssh2host
