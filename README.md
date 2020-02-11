@@ -6,7 +6,7 @@ NOTE! ssh2host does not contain any kind of authentication so make sure that you
 ![alt text](https://raw.githubusercontent.com/olljanat/ssh2host/master/ssh2host_on_portainer.png "ssh2host on Portainer")
 
 # Deploy
-- Enable SSH access with privake key authentication.
+- Enable SSH access with privake key authentication (NOTE! Key format must be ed25519)
 - Use same private key on all swarm nodes.
 - Update USERNAME variable on stack.
 - Create Docker secret from private key:

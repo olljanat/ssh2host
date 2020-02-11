@@ -15,7 +15,7 @@ select NODE in "${NODES[@]}"; do
       then
          exit
       fi
-      /usr/bin/ssh -oStrictHostKeyChecking=no $USERNAME@$NODE
+      /usr/bin/ssh -i /root/.ssh/id_ed25519 -oStrictHostKeyChecking=no $USERNAME@$NODE
       exit
       ;;
   esac

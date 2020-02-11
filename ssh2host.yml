@@ -5,7 +5,7 @@ services:
      image: ollijanatuinen/ssh2host
      secrets:
        - source: host-ssh-key
-         target: /root/.ssh/id_rsa
+         target: /root/.ssh/id_ed25519
          mode: 0400
      networks:
        - bridge
@@ -17,7 +17,9 @@ services:
        - USERNAME=root
      deploy:
          placement:
-             constraints: [node.role == manager]
+             constraints:
+               - node.role == manager
+               - node.platform.os == linux
 
 secrets:
    host-ssh-key:
